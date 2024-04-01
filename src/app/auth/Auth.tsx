@@ -31,12 +31,12 @@ const Auth = ({}) => {
 		mutationKey: [TANSTACK_KEYS.auth],
 		mutationFn: (data: IAuthForm) =>
 			authService.main(isLoginForm ? 'login' : 'register', data),
-		onSuccess() {
+		onSuccess: () => {
 			toast.success('Successfully login!')
 			reset()
 			push(DASHBOARD_PAGES.HOME)
 		},
-		onError(error: any) {
+		onError: (error: any) => {
 			toast.error(error.response?.data.message)
 			reset()
 		}

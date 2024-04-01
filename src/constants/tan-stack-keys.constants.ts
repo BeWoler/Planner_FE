@@ -1,4 +1,5 @@
 export const TANSTACK_KEYS = {
 	auth: 'auth',
-	profile: 'profile'
+	profile: 'profile',
+	logout: 'logout'
 }
