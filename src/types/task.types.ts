@@ -12,4 +12,4 @@ export interface ITaskResponse extends IBase {
 	isCompleted: boolean
 }
 
-export type TypeTaskFormState = Partial<Omit<ITaskResponse, 'id' | 'updatedAt'>>
+export type TypeTaskState = Partial<Omit<ITaskResponse, 'id' | 'updatedAt'>>
