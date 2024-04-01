@@ -35,6 +35,10 @@ const Auth = ({}) => {
 			toast.success('Successfully login!')
 			reset()
 			push(DASHBOARD_PAGES.HOME)
+		},
+		onError(error: any) {
+			toast.error(error.response?.data.message)
+			reset()
 		}
 	})
 
