@@ -1,5 +1,7 @@
 import axios, { type CreateAxiosDefaults } from 'axios'
 
+import { BASE_URL } from '@/constants/base-url.constants'
+
 import { errorCatch } from './error'
 import {
 	getAccessToken,
@@ -8,7 +10,7 @@ import {
 import { authService } from '@/services/auth.service'
 
 const options: CreateAxiosDefaults = {
-	baseURL: 'http://localhost:3000/api',
+	baseURL: BASE_URL.server,
 	headers: {
 		'Content-Type': 'application/json'
 	},
