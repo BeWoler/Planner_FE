@@ -1,22 +1,15 @@
 'use client'
 
-import { useMutation } from '@tanstack/react-query'
-import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { toast } from 'sonner'
 
 import { Heading } from '@/components/ui/Heading'
 import { Button } from '@/components/ui/buttons/Button'
 import { Field } from '@/components/ui/fields/Field'
 
-import { TANSTACK_KEYS } from '@/constants/tan-stack-keys.constants'
-
 import { IAuthForm } from '@/types/auth.types'
 
-import { DASHBOARD_PAGES } from '@/config/pages-url.config'
-
-import { authService } from '@/services/auth.service'
+import { useAuth } from '@/hooks/mutation/useAuth'
 
 const Auth = ({}) => {
 	const { register, handleSubmit, reset } = useForm<IAuthForm>({
@@ -25,22 +18,7 @@ const Auth = ({}) => {
 
 	const [isLoginForm, setIsLoginForm] = useState(false)
 
-	const { push } = useRouter()
-
-	const { mutate } = useMutation({
-		mutationKey: [TANSTACK_KEYS.auth],
-		mutationFn: (data: IAuthForm) =>
-			authService.main(isLoginForm ? 'login' : 'register', data),
-		onSuccess: () => {
-			toast.success('Successfully login!')
-			reset()
-			push(DASHBOARD_PAGES.HOME)
-		},
-		onError: (error: any) => {
-			toast.error(error.response?.data.message)
-			reset()
-		}
-	})
+	const { mutate } = useAuth(isLoginForm, reset)
 
 	const onSubmit: SubmitHandler<IAuthForm> = data => {
 		mutate(data)
@@ -59,7 +37,7 @@ const Auth = ({}) => {
 					})}
 					id='email'
 					label='Email:'
-					placeholder='Enter email:'
+					placeholder='Enter email: '
 					type='email'
 					extra='mb-4'
 				/>
@@ -69,7 +47,7 @@ const Auth = ({}) => {
 					})}
 					id='password'
 					label='Password:'
-					placeholder='Enter password:'
+					placeholder='Enter password: '
 					type='password'
 					extra='mb-6'
 				/>
