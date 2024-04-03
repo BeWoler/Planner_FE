@@ -9,11 +9,11 @@ export const useDeleteTask = () => {
 
 	const { mutate: deleteTask, isPending: isDeletePending } = useMutation({
 		mutationKey: [TANSTACK_KEYS.deleteTask],
-		mutationFn: ({ id }: { id: string }) => taskService.deleteTask(id),
+		mutationFn: (id: string) => taskService.deleteTask(id),
 		onSuccess: () => {
 			queryClient.invalidateQueries({ queryKey: [TANSTACK_KEYS.tasks] })
 		}
 	})
 
-	return { deleteTask }
+	return { deleteTask, isDeletePending }
 }
