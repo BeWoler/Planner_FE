@@ -40,7 +40,9 @@ const SingleSelect = ({ ...props }: ISingleSelect) => {
 						variant={props.value}
 						className='capitalize'
 						style={props.isColorSelect ? { backgroundColor: props.value } : {}}
-					></Badge>
+					>
+						{props.value}
+					</Badge>
 				) : (
 					<Badge>Click for select</Badge>
 				)}

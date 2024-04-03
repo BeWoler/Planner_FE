@@ -1,1 +1,1 @@
-export const PRIORITY = ['higth', 'medium', 'low']
+export const PRIORITY = ['high', 'medium', 'low']

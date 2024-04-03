@@ -15,9 +15,11 @@ import type { ITaskResponse, TypeTaskState } from '@/types/task.types'
 import { useDeleteTask } from '@/hooks/mutation/useDeleteTask'
 import { useTaskDebounce } from '@/hooks/useTaskDebounce'
 
+import styles from './ListView.module.scss'
+
 export interface IListRow {
 	item: ITaskResponse
-	setItems: Dispatch<SetStateAction<ITaskResponse[]>>
+	setItems: Dispatch<SetStateAction<ITaskResponse[] | undefined>>
 }
 
 const ListRow = ({ item, setItems }: IListRow) => {
@@ -36,8 +38,8 @@ const ListRow = ({ item, setItems }: IListRow) => {
 	return (
 		<div
 			className={cn(
-				// styles.row,
-				// watch('isCompleted') ? styles.completed : '',
+				styles.row,
+				watch('isCompleted') ? styles.completed : '',
 				'animation-opacity'
 			)}
 		>
