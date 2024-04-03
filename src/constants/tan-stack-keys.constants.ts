@@ -4,5 +4,7 @@ export const TANSTACK_KEYS = {
 	logout: 'logout',
 	updateSettings: 'update profile',
 	tasks: 'tasks',
-	updateTask: 'update task'
+	updateTask: 'update task',
+	createTask: 'create task',
+	deleteTask: 'delete task'
 }

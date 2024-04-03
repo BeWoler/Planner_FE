@@ -9,6 +9,7 @@ import { userService } from '@/services/user.service'
 
 export const useUpdateSettings = () => {
 	const queryClient = useQueryClient()
+  
 	const { mutate, isPending } = useMutation({
 		mutationKey: [TANSTACK_KEYS.updateSettings],
 		mutationFn: (data: TypeUserForm) => userService.update(data),

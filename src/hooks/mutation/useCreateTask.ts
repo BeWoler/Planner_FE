@@ -6,17 +6,16 @@ import { TypeTaskState } from '@/types/task.types'
 
 import { taskService } from '@/services/task.service'
 
-export const useUpdateTask = (key?: string) => {
+export const useCreateTask = () => {
 	const queryClient = useQueryClient()
-  
-	const { mutate: updateTask } = useMutation({
-		mutationKey: [TANSTACK_KEYS.updateTask, key],
-		mutationFn: ({ id, data }: { id: string; data: TypeTaskState }) =>
-			taskService.updateTask(id, data),
+
+	const { mutate: createTask } = useMutation({
+		mutationKey: [TANSTACK_KEYS.createTask],
+		mutationFn: (data: TypeTaskState) => taskService.createTask(data),
 		onSuccess: () => {
 			queryClient.invalidateQueries({ queryKey: [TANSTACK_KEYS.tasks] })
 		}
 	})
 
-	return { updateTask }
+	return { createTask }
 }
