@@ -13,5 +13,6 @@ export const TANSTACK_KEYS = {
 	deleteSession: 'delete session',
 	timeBlock: 'time block',
 	createTimeBlock: 'create time block',
-	updateTimeBlock: 'update time block'
+	updateTimeBlock: 'update time block',
+	deleteTimeBlock: 'delete time block'
 }

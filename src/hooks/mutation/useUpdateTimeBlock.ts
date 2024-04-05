@@ -14,7 +14,7 @@ export const useUpdateTimeBlock = (key?: string) => {
 		mutationFn: ({ id, data }: { id: string; data: TypeTimeBlockState }) =>
 			timeBlockService.updateTimeBlock(id, data),
 		onSuccess: () =>
-			queryClient.invalidateQueries({ queryKey: [TANSTACK_KEYS.timeBlock] })
+			queryClient.invalidateQueries({ queryKey: [TANSTACK_KEYS.timeBlock,] })
 	})
 
 	return { updateTimeBlock }
