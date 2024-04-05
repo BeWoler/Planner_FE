@@ -10,5 +10,8 @@ export const TANSTACK_KEYS = {
 	updateRound: 'update round',
 	getTodaySession: 'get today session',
 	createNewSession: 'create new session',
-	deleteSession: 'delete session'
+	deleteSession: 'delete session',
+	timeBlock: 'time block',
+	createTimeBlock: 'create time block',
+	updateTimeBlock: 'update time block'
 }

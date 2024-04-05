@@ -4,20 +4,20 @@ import { Heading } from '@/components/ui/Heading'
 
 import { NO_INDEX_PAGE } from '@/constants/seo.constants'
 
-import { Pomodoro } from './Pomodoro'
+import TimeBlocking from './TimeBlocking'
 
 const metadata: Metadata = {
-	title: 'Pomodoro Timer',
+	title: 'Time blocking',
 	...NO_INDEX_PAGE
 }
 
-const TimerPage = () => {
+const TimeBlockingPage = () => {
 	return (
 		<div>
-			<Heading title='Pomodoro timer' />
-			<Pomodoro />
+			<Heading title='Time blocking' />
+			<TimeBlocking />
 		</div>
 	)
 }
 
-export default TimerPage
+export default TimeBlockingPage
