@@ -6,14 +6,12 @@ import {
 	useSensors
 } from '@dnd-kit/core'
 import { arrayMove } from '@dnd-kit/sortable'
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import type { Dispatch, SetStateAction } from 'react'
 
 import { TANSTACK_KEYS } from '@/constants/tan-stack-keys.constants'
 
 import type { ITimeBlockResponse } from '@/types/time-block.types'
-
-import { queryClient } from '@/config/query-client'
 
 import { timeBlockService } from '@/services/time-block.service'
 
@@ -25,6 +23,8 @@ export function useTimeBlockDnd(
 		useSensor(PointerSensor),
 		useSensor(KeyboardSensor)
 	)
+
+	const queryClient = useQueryClient()
 
 	const { mutate } = useMutation({
 		mutationKey: [TANSTACK_KEYS.timeBlock],
