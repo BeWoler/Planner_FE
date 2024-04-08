@@ -1,8 +1,8 @@
-import { DropResult } from '@hello-pangea/dnd'
+import type { DropResult } from '@hello-pangea/dnd'
 
 import { FILTERS } from '@/constants/filters.constants'
 
-import { useUpdateTask } from './useUpdateTask'
+import { useUpdateTask } from './mutation/useUpdateTask'
 
 export const useTaskDnd = () => {
 	const { updateTask } = useUpdateTask()

@@ -1,16 +1,6 @@
-import { ChangeEventHandler, forwardRef } from 'react'
+import { forwardRef } from 'react'
 
-interface InputFieldProps {
-	id: string
-	label: string
-	extra?: string
-	placeholder: string
-	variant?: string
-	state?: 'error' | 'success'
-	disabled?: boolean
-	type?: string
-	isNumber?: boolean
-}
+import type { InputFieldProps } from './interfaces/field.interface'
 
 export const Field = forwardRef<HTMLInputElement, InputFieldProps>(
 	(

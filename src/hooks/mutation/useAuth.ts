@@ -1,11 +1,11 @@
 import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
-import { UseFormReset } from 'react-hook-form'
+import type { UseFormReset } from 'react-hook-form'
 import { toast } from 'sonner'
 
 import { TANSTACK_KEYS } from '@/constants/tan-stack-keys.constants'
 
-import { IAuthForm, TypeUserForm } from '@/types/auth.types'
+import type { IAuthForm } from '@/types/auth.types'
 
 import { DASHBOARD_PAGES } from '@/config/pages-url.config'
 

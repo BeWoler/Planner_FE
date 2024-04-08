@@ -1,10 +1,6 @@
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-type TypeOut = {
-	ref: any
-	isShow: boolean
-	setIsShow: Dispatch<SetStateAction<boolean>>
-}
+import type { TypeOut } from './interfaces/outside.interface'
 
 export const useOutside = (initialIsVisible: boolean): TypeOut => {
 	const [isShow, setIsShow] = useState(initialIsVisible)

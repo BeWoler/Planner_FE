@@ -4,8 +4,8 @@ import { DragDropContext } from '@hello-pangea/dnd'
 
 import { COLUMNS } from '@/constants/columns.constants'
 
-import { useTaskDnd } from '@/hooks/mutation/useTaskDnd'
 import { useTasks } from '@/hooks/query/useTasks'
+import { useTaskDnd } from '@/hooks/useTaskDnd'
 
 import ListRowParent from './ListRowParent'
 import styles from './ListView.module.scss'

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { IMenuItem } from '@/constants/menu.constants'
+import type { IMenuItem } from '@/constants/interfaces/menu.interface'
 
 export const MenuItem = ({ item }: { item: IMenuItem }) => {
 	return (

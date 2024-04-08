@@ -4,8 +4,8 @@ import { DragDropContext } from '@hello-pangea/dnd'
 
 import { COLUMNS } from '@/constants/columns.constants'
 
-import { useTaskDnd } from '@/hooks/mutation/useTaskDnd'
 import { useTasks } from '@/hooks/query/useTasks'
+import { useTaskDnd } from '@/hooks/useTaskDnd'
 
 import { KanbanColumn } from './KanbanColumn'
 import styles from './KanbanView.module.scss'

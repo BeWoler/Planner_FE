@@ -1,11 +1,7 @@
-import type { CSSProperties, PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 import { tv } from 'tailwind-variants'
 
-interface IBadge {
-	className?: string
-	variant?: string
-	style?: CSSProperties
-}
+import type { IBadge } from './interfaces/badge.interface'
 
 const badge = tv({
 	base: 'rounded-lg w-max py-1 px-2 text-xs font-semibold text-sm text-white transition',

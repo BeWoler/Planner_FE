@@ -1,9 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 
-interface IUseLocalStorage<T> {
-	key: string
-	defaultValue: T
-}
+import type { IUseLocalStorage } from './interfaces/local-storage.interface'
 
 export function useLocalStorage<T>({
 	defaultValue,

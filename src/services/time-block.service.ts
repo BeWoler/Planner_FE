@@ -1,6 +1,6 @@
 import { BASE_URL } from '@/constants/base-url.constants'
 
-import {
+import type {
 	ITimeBlockResponse,
 	TypeTimeBlockState
 } from '@/types/time-block.types'

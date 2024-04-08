@@ -1,16 +1,10 @@
 import { BASE_URL } from '@/constants/base-url.constants'
 
-import { IUser, TypeUserForm } from '@/types/auth.types'
+import type { TypeUserForm } from '@/types/auth.types'
 
 import { axiosWithAuth } from '@/api/interceptors'
 
-export interface IProfileResponse {
-	user: IUser
-	statistics: {
-		label: string
-		value: string
-	}[]
-}
+import type { IProfileResponse } from './interfaces/user.interface'
 
 class UserService {
 	private BASE_URL = BASE_URL.userService

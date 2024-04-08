@@ -1,6 +1,4 @@
-interface IHeading {
-	title: string
-}
+import type { IHeading } from './interfaces/heading.interface'
 
 export function Heading({ title }: IHeading) {
 	return (

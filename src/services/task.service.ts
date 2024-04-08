@@ -1,6 +1,6 @@
 import { BASE_URL } from '@/constants/base-url.constants'
 
-import { ITaskResponse, TypeTaskState } from '@/types/task.types'
+import type { ITaskResponse, TypeTaskState } from '@/types/task.types'
 
 import { axiosWithAuth } from '@/api/interceptors'
 

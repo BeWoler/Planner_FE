@@ -2,18 +2,13 @@ import {
 	CalendarRange,
 	KanbanSquare,
 	LayoutDashboard,
-	type LucideIcon,
 	Settings,
 	Timer
 } from 'lucide-react'
 
 import { DASHBOARD_PAGES } from '@/config/pages-url.config'
 
-export interface IMenuItem {
-	link: string
-	name: string
-	icon: LucideIcon
-}
+import type { IMenuItem } from './interfaces/menu.interface'
 
 export const MENU: IMenuItem[] = [
 	{

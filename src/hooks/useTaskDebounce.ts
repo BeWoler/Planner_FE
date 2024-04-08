@@ -1,16 +1,11 @@
 import debounce from 'lodash.debounce'
 import { useCallback, useEffect } from 'react'
-import { UseFormWatch } from 'react-hook-form'
 
-import { ITaskResponse, TypeTaskState } from '@/types/task.types'
+import type { TypeTaskState } from '@/types/task.types'
 
+import type { IUseTaskDebounce } from './interfaces/task-debounce.interface'
 import { useCreateTask } from './mutation/useCreateTask'
 import { useUpdateTask } from './mutation/useUpdateTask'
-
-export interface IUseTaskDebounce {
-	watch: UseFormWatch<TypeTaskState>
-	itemId: string
-}
 
 export const useTaskDebounce = ({ watch, itemId }: IUseTaskDebounce) => {
 	const { updateTask } = useUpdateTask()

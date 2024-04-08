@@ -1,4 +1,4 @@
-import { IAuthForm, IAuthResponse } from '@/types/auth.types'
+import type { IAuthForm, IAuthResponse } from '@/types/auth.types'
 
 import { axiosClassic } from '@/api/interceptors'
 

@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 import { TANSTACK_KEYS } from '@/constants/tan-stack-keys.constants'
 
-import { ITimerState } from '@/types/timer.types'
+import type { ITimerState } from '@/types/timer.types'
 
 import { useLoadSettings } from '../useLoadSettings'
 
