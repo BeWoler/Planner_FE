@@ -1,5 +1,6 @@
 import { Draggable, Droppable } from '@hello-pangea/dnd'
 import type { Dispatch, SetStateAction } from 'react'
+import { useId } from 'react'
 
 import { FILTERS } from '@/constants/filters.constants'
 
@@ -24,6 +25,8 @@ export const KanbanColumn = ({
 	label,
 	setItems
 }: IKanbanColumn) => {
+	const customId = useId()
+
 	return (
 		<Droppable droppableId={value}>
 			{provided => (
@@ -33,11 +36,10 @@ export const KanbanColumn = ({
 				>
 					<div className={styles.column}>
 						<div className={styles.columnHeading}>{label}</div>
-
 						{filterTasks(items, value)?.map((item, index) => (
 							<Draggable
 								key={item.id}
-								draggableId={item.id}
+								draggableId={item.id || customId}
 								index={index}
 							>
 								{provided => (
@@ -55,9 +57,7 @@ export const KanbanColumn = ({
 								)}
 							</Draggable>
 						))}
-
 						{provided.placeholder}
-
 						{value !== 'completed' && !items?.some(item => !item.id) && (
 							<KanbanAddCardInput
 								setItems={setItems}

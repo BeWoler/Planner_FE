@@ -1,5 +1,6 @@
 import { Draggable, Droppable } from '@hello-pangea/dnd'
 import type { Dispatch, SetStateAction } from 'react'
+import { useId } from 'react'
 
 import { FILTERS } from '@/constants/filters.constants'
 
@@ -19,6 +20,8 @@ export interface IListRowParend {
 }
 
 const ListRowParent = ({ ...props }: IListRowParend) => {
+	const customId = useId()
+
 	return (
 		<Droppable droppableId={props.value}>
 			{provided => (
@@ -32,7 +35,7 @@ const ListRowParent = ({ ...props }: IListRowParend) => {
 					{filterTasks(props.items, props.value)?.map((item, i) => (
 						<Draggable
 							key={item.id}
-							draggableId={item.id}
+							draggableId={item.id || customId}
 							index={i}
 						>
 							{provided => (

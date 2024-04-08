@@ -25,7 +25,7 @@ class TimeBlockService {
 	}
 
 	async updateTimeBlock(id: string, data: TypeTimeBlockState) {
-		return await axiosWithAuth.put(`${this.BASE_URL}/${id}`, data)
+		return await axiosWithAuth.put(`${this.BASE_URL}/update/${id}`, data)
 	}
 
 	async deleteTimeBlock(id: string) {
